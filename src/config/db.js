@@ -3,10 +3,11 @@ require('dotenv').config();
 const { DB_HOST, DB_USER, DB_PASS, DB_NAME } = process.env;
 
 const connection = mysql.createConnection({
-    host: DB_HOST || 'localhost',
-    database: DB_USER || 'chat',
-    username: DB_USER || 'igdamin',
-    password: DB_PASS || '$User#Conec.2022$',
+    host: 'localhost',
+    port: 3306,
+    database: 'chat',
+    user: 'igdadmin',
+    password: '$User#Conec.2022$'
 });
 
 module.exports = connection;
