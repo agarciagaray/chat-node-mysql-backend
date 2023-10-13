@@ -5,4 +5,14 @@ function hashPassword(password) {
     return bcrypt.hashSync(password, salt);  //returns a promise
 }
 
-module.exports = hashPassword;
+function getFilePath(file) {
+    const path = file.path.split('\\');
+    const fileName = path.pop();
+    const folder = path.pop();
+    return `${folder}/${fileName}`;
+
+}
+module.exports = {
+    hashPassword,
+    getFilePath
+};
